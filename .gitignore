@@ -1,0 +1,7 @@
+node_modules/
+*.log
+.DS_Store
+target/
+*.wav
+*.mp3
+.env

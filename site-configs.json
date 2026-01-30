@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "description": "Site configurations for Prosperity browser automation",
+  
+  "sites": {
+    "google": {
+      "name": "Google",
+      "domains": ["google.com", "gmail.com", "youtube.com", "accounts.google.com"],
+      "login": {
+        "url": "https://accounts.google.com/signin",
+        "steps": [
+          { "fill": "input[type='email']", "value": "{username}", "wait": 500 },
+          { "click": "#identifierNext, button:has-text('Next')", "wait": 2000 },
+          { "fill": "input[type='password']", "value": "{password}", "wait": 500 },
+          { "click": "#passwordNext, button:has-text('Next')", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://myaccount.google.com/signinoptions/password",
+        "steps": [
+          { "fill": "input[type='password'][name='password']", "value": "{old_password}", "wait": 500 },
+          { "click": "button:has-text('Next')", "wait": 2000 },
+          { "fill": "input[name='Passwd']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='PasswdAgain']", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Change password')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "facebook": {
+      "name": "Facebook",
+      "domains": ["facebook.com", "fb.com", "instagram.com"],
+      "login": {
+        "url": "https://www.facebook.com/login",
+        "steps": [
+          { "fill": "#email", "value": "{username}", "wait": 500 },
+          { "fill": "#pass", "value": "{password}", "wait": 500 },
+          { "click": "button[name='login']", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://www.facebook.com/settings?tab=security",
+        "steps": [
+          { "click": "text='Change password'", "wait": 1000 },
+          { "fill": "input[name='password_old']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='password_new']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='password_confirm']", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Save Changes')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "netflix": {
+      "name": "Netflix",
+      "domains": ["netflix.com"],
+      "login": {
+        "url": "https://www.netflix.com/login",
+        "steps": [
+          { "fill": "input[name='userLoginId']", "value": "{username}", "wait": 500 },
+          { "fill": "input[name='password']", "value": "{password}", "wait": 500 },
+          { "click": "button[type='submit']", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://www.netflix.com/password",
+        "steps": [
+          { "fill": "input[name='currentPassword']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='newPassword']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='confirmNewPassword']", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Save')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "amazon": {
+      "name": "Amazon",
+      "domains": ["amazon.com", "amazon.co.uk"],
+      "login": {
+        "url": "https://www.amazon.com/ap/signin",
+        "steps": [
+          { "fill": "input[name='email']", "value": "{username}", "wait": 500 },
+          { "click": "#continue", "wait": 1500 },
+          { "fill": "input[name='password']", "value": "{password}", "wait": 500 },
+          { "click": "#signInSubmit", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://www.amazon.com/gp/css/account/info/view.html",
+        "steps": [
+          { "click": "text='Login & security'", "wait": 2000 },
+          { "click": "text='Edit' >> nth=1", "wait": 1000 },
+          { "fill": "input[name='password']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='passwordNew']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='passwordNewCheck']", "value": "{new_password}", "wait": 500 },
+          { "click": "input[type='submit']", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "twitter": {
+      "name": "Twitter/X",
+      "domains": ["twitter.com", "x.com"],
+      "login": {
+        "url": "https://twitter.com/i/flow/login",
+        "steps": [
+          { "fill": "input[autocomplete='username']", "value": "{username}", "wait": 500 },
+          { "click": "text='Next'", "wait": 2000 },
+          { "fill": "input[name='password']", "value": "{password}", "wait": 500 },
+          { "click": "text='Log in'", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://twitter.com/settings/password",
+        "steps": [
+          { "fill": "input[name='current_password']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='new_password']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='password_confirmation']", "value": "{new_password}", "wait": 500 },
+          { "click": "text='Save'", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "linkedin": {
+      "name": "LinkedIn",
+      "domains": ["linkedin.com"],
+      "login": {
+        "url": "https://www.linkedin.com/login",
+        "steps": [
+          { "fill": "#username", "value": "{username}", "wait": 500 },
+          { "fill": "#password", "value": "{password}", "wait": 500 },
+          { "click": "button[type='submit']", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://www.linkedin.com/psettings/change-password",
+        "steps": [
+          { "fill": "input[name='currentPassword']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='newPassword']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='retypedPassword']", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Save')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "github": {
+      "name": "GitHub",
+      "domains": ["github.com"],
+      "login": {
+        "url": "https://github.com/login",
+        "steps": [
+          { "fill": "#login_field", "value": "{username}", "wait": 500 },
+          { "fill": "#password", "value": "{password}", "wait": 500 },
+          { "click": "input[type='submit']", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://github.com/settings/admin",
+        "steps": [
+          { "fill": "#old_password", "value": "{old_password}", "wait": 500 },
+          { "fill": "#new_password", "value": "{new_password}", "wait": 500 },
+          { "fill": "#confirm_new_password", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Update password')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "reddit": {
+      "name": "Reddit",
+      "domains": ["reddit.com"],
+      "login": {
+        "url": "https://www.reddit.com/login",
+        "steps": [
+          { "fill": "input[name='username']", "value": "{username}", "wait": 500 },
+          { "fill": "input[name='password']", "value": "{password}", "wait": 500 },
+          { "click": "button[type='submit']", "wait": 3000 }
+        ]
+      },
+      "change_password": {
+        "url": "https://www.reddit.com/settings/account",
+        "steps": [
+          { "click": "text='Change password'", "wait": 1000 },
+          { "fill": "input[name='currentPassword']", "value": "{old_password}", "wait": 500 },
+          { "fill": "input[name='newPassword']", "value": "{new_password}", "wait": 500 },
+          { "fill": "input[name='confirmPassword']", "value": "{new_password}", "wait": 500 },
+          { "click": "button:has-text('Save')", "wait": 3000 }
+        ]
+      }
+    },
+    
+    "chase": {
+      "name": "Chase Bank",
+      "domains": ["chase.com"],
+      "login": {
+        "url": "https://www.chase.com",
+        "steps": [
+          { "fill": "#userId-text-input-field", "value": "{username}", "wait": 500 },
+          { "fill": "#password-text-input-field", "value": "{password}", "wait": 500 },
+          { "click": "#signin-button", "wait": 5000 }
+        ]
+      },
+      "change_password": {
+        "requires_mfa": true,
+        "note": "Bank password changes typically require MFA and may need manual intervention"
+      }
+    }
+  },
+  
+  "password_generation": {
+    "length": 20,
+    "uppercase": true,
+    "lowercase": true,
+    "numbers": true,
+    "symbols": true,
+    "exclude_ambiguous": true,
+    "ambiguous_chars": "0O1lI"
+  }
+}
