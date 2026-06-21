@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "name": "sample",
+  "version": "1",
+  "author": "",
+  "_note": "No images[] listed on purpose: drop image files into this folder and they are picked up automatically, sorted by filename. To pin order/metadata, add an images[] array of {file, title, credit, focal:[x,y]}."
+}
