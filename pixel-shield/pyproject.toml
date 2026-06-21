@@ -1,0 +1,19 @@
+[project]
+name = "pixel-shield"
+version = "1.0.0"
+description = "OLED burn-in protection: micro-shift wallpaper + idle screensaver for Linux (GNOME/X11)."
+requires-python = ">=3.11"
+dependencies = [
+    "moderngl>=5.12",
+    "pygame>=2.6",
+    "Pillow>=10",
+    "rawpy>=0.20",
+    "python-xlib>=0.33",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
